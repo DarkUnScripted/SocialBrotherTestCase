@@ -1,0 +1,23 @@
+query BlogContent($slug: String) {
+  Blog(slug: $slug) {
+    title
+    banner_image {
+      url
+    }
+    categories {
+      body
+    }
+    content {
+      ... on Text {
+        text
+        html
+        format
+      }
+      ... on Resource {
+        type
+        body
+        url
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+query BlogPreview($limit: Int, $sort: BlogSortInput, $where: BlogWhereInput) {
+  Blogs(limit: $limit, sort: $sort, where: $where) {
+    total
+    items {
+      title
+      categories {
+        body
+      }
+      _slug
+      banner_image {
+        url
+      }
+      content {
+        ... on Text {
+          text
+        }
+      }
+    }
+  }
+}

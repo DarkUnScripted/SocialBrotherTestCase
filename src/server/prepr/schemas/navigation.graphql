@@ -1,0 +1,13 @@
+query NavigationItems($where: NavigationWhereInput) {
+  Navigations(where: $where) {
+    items {
+      items {
+        title
+        link_to_page {
+          _slug
+        }
+      }
+      title
+    }
+  }
+}
